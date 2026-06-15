@@ -19,7 +19,7 @@
 
 ### From VSIX
 
-1. Download the `.vsix` file from the [releases page](https://github.com/your-org/opencode-agent/releases).
+1. Download the `.vsix` file from the [releases page](https://github.com/sunnysharma4002/OpenCodeAgent/releases).
 2. In VS Code, open the Extensions view (`Ctrl+Shift+X`), click the `...` menu → **Install from VSIX...**
 3. Select the downloaded `.vsix` file.
 4. Reload VS Code.
@@ -81,7 +81,7 @@ The agent can use these tools to interact with your workspace:
 ### Setup
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/sunnysharma4002/OpenCodeAgent.git
 cd opencode-agent
 npm install
 ```
@@ -134,7 +134,7 @@ npm run watch
 
 ## Support
 
-If you encounter any issues or have feature requests, please open an issue on the [GitHub repository](https://github.com/your-org/opencode-agent/issues).
+If you encounter any issues or have feature requests, please open an issue on the [GitHub repository](https://github.com/sunnysharma4002/OpenCodeAgent/issues).
 
 ---
 
