@@ -4,7 +4,7 @@
   "description": "AI coding agent powered by OpenCode Zen API. Inspect, edit, and write code in your workspace.",
   "version": "0.0.1",
   "publisher": "local",
-  "repository": { "type": "git", "url": "https://github.com/local/opencode-agent" },
+  "repository": { "type": "git", "url": "https://github.com/sunnysharma4002/OpenCodeAgent" },
   "license": "MIT",
   "engines": {
     "vscode": "^1.90.0"
@@ -60,6 +60,7 @@
     "vscode:prepublish": "npm run build",
     "build": "node esbuild.js",
     "watch": "node esbuild.js --watch",
+    "package": "npm run build && npx vsce package",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
