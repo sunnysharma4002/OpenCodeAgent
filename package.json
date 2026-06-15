@@ -1,0 +1,72 @@
+{
+  "name": "opencode-agent",
+  "displayName": "OpenCode Agent",
+  "description": "AI coding agent powered by OpenCode Zen API. Inspect, edit, and write code in your workspace.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "repository": { "type": "git", "url": "https://github.com/local/opencode-agent" },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "AI"
+  ],
+  "keywords": [
+    "opencode",
+    "zen",
+    "ai",
+    "chat",
+    "coding",
+    "agent",
+    "coding-assistant"
+  ],
+  "activationEvents": [
+    "onView:opencodeAgent.sidePanel"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "opencodeAgent",
+          "title": "OpenCode Agent",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "opencodeAgent": [
+        {
+          "type": "webview",
+          "id": "opencodeAgent.sidePanel",
+          "name": "Chat"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "OpenCode Agent",
+      "properties": {
+        "opencodeAgent.apiKey": {
+          "type": "string",
+          "default": "sk-YXf23vZWHSWVWZBj6ItubZWVsIA2g3feCcz7ZoRaA8rUEvglOAMGDFhse6dU6UaQ",
+          "description": "OpenCode API key (used for server auth and provider access)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.9.2",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.2"
+  }
+}
