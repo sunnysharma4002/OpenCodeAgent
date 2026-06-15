@@ -71,6 +71,53 @@ The agent can use these tools to interact with your workspace:
 | `run_command` | Execute a shell command in the workspace directory (30s timeout). |
 | `grep_search` | Search for a regex pattern in workspace files. |
 
+## Building from source
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or newer)
+- npm
+
+### Setup
+
+```bash
+git clone <repository-url>
+cd opencode-agent
+npm install
+```
+
+### Build the extension
+
+Compile the TypeScript source and bundle the extension:
+
+```bash
+npm run build
+```
+
+### Package a VSIX
+
+To create a `.vsix` file that can be installed directly in VS Code:
+
+```bash
+npm run package
+```
+
+This runs the build first, then packages the extension into `opencode-agent-<version>.vsix` using `vsce`. You can install the resulting `.vsix` file via the Extensions view → `...` → **Install from VSIX...**
+
+If you need to package without publishing, use:
+
+```bash
+npx vsce package
+```
+
+### Watch mode
+
+During development, you can run the build in watch mode for automatic recompilation:
+
+```bash
+npm run watch
+```
+
 ## Security
 
 - All tool operations are **sandboxed to the workspace root** – path traversal attacks are blocked.
